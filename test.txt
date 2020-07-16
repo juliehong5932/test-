@@ -1,0 +1,34 @@
+#creating bins
+bins = [0, 584,629,644,675]
+group_label = ["<$584", "$585-629", "$630-644", "$645-675"]
+
+
+summary_df["Sepnding Ranges"] = pd.cut(summary_df["Per Student Budget"], bins, labels=group_label)
+summary_df
+
+
+
+# spending_group = summary_df.groupby("Spending Ranges")
+
+# avg_math = round(spending_group["math_score"].mean(),2)
+# avg_read = round(spending_group["reading_score"].mean(),2)
+
+# pass_math = school_data_complete[school_data_complete["math_score"]>=70].groupby(["Sending Ranges"])
+# pct_pass_math = round(pass_math.count()["student_name"]/total_student*100,2)
+
+# pass_read = school_data_complete[school_data_complete["reading_score"]>=70].groupby(["school_name"])
+# pct_pass_read = round(pass_read.count()["student_name"]/total_student*100,2)
+
+# pass_overall = school_data_complete[(school_data_complete["reading_score"]>=70)&(school_data_complete["math_score"]>=70)].groupby(["school_name"])
+# pct_pass_overall = round(pass_overall.count()["student_name"]/total_student*100,2)
+
+
+# spending = {"Average Math Score": avg_math,
+#         "Average Reading Score": avg_read
+# #         "% Passing Math":pct_pass_math,
+# #         "% Passing Reading" : pct_pass_read,
+# #         "% Overall Passing" : pct_pass_overall
+#          }
+
+# spending_range = pd.DataFrame(spending)
+# spending_range
